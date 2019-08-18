@@ -9,10 +9,6 @@ whatever. Also to play with JavaFX.
 
 Had to download the JavaFX SDK from [[https://gluonhq.com/products/javafx/][here]].
 
-** To compile
-
-: dev/compile
-
 ** To Run
 
 : dev/run
