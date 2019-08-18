@@ -1,0 +1,29 @@
+{:paths ["src/java" "src/clojure"]
+ :deps
+ {org.clojure/clojure {:mvn/version "1.10.0"}
+  org.clojure/core.async {:mvn/version "0.4.490"}
+  cljfx {:git/url "https://github.com/cljfx/cljfx"
+         ;; 1.3.2
+         :sha "203efed4fbc1e66dffcb4aabaf4fb924857798b0"}
+  ;; Need to figure out if this is indeed where we want this
+  org.openjfx/javafx-fxml     {:mvn/version "11.0.1"}
+  org.openjfx/javafx-controls {:mvn/version "11.0.1"}
+  org.openjfx/javafx-swing    {:mvn/version "11.0.1"}
+  org.openjfx/javafx-base     {:mvn/version "11.0.1"}
+  org.openjfx/javafx-web      {:mvn/version "11.0.1"}}
+
+ :aliases
+ {:dev  {:jvm-opts ["-XX:+FlightRecorder"]
+         :extra-paths ["dev"
+                       "test"]
+         :extra-deps
+         {}}
+  :rebl {:extra-deps {org.clojure/clojure {:mvn/version "1.10.0"}
+                      org.clojure/core.async {:mvn/version "0.4.490"}
+                      ;; Need to figure out if this is indeed where we want this
+                      com.cognitect/rebl {:local/root "lib/rebl/REBL-0.9.172.jar"}
+                      org.openjfx/javafx-fxml     {:mvn/version "11.0.1"}
+                      org.openjfx/javafx-controls {:mvn/version "11.0.1"}
+                      org.openjfx/javafx-swing    {:mvn/version "11.0.1"}
+                      org.openjfx/javafx-base     {:mvn/version "11.0.1"}
+                      org.openjfx/javafx-web      {:mvn/version "11.0.1"}}}}}

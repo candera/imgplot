@@ -1,0 +1,18 @@
+* Overview
+
+The idea behind this project is to load an image and then turn it into
+various gcode paths that might be interesting, like something that
+sort of sketches it in halftones with hash marks or wiggles or
+whatever. Also to play with JavaFX.
+
+* Hacking
+
+Had to download the JavaFX SDK from [[https://gluonhq.com/products/javafx/][here]].
+
+** To compile
+
+: dev/compile
+
+** To Run
+
+: dev/run

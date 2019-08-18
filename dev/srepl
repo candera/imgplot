@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+clj -A:dev $* - <<EOF
+(defn repl-server-accept
+  "Override the default so we land in the boot.user namespace instead
+  of the default (user)."
+  []
+  (clojure.main/repl
+   :init (fn []
+           (let [init-ns-sym 'user]
+             (require init-ns-sym)
+             (in-ns init-ns-sym)
+             (apply require clojure.main/repl-requires)))
+   :read clojure.core.server/repl-read))
+
+(defn run-repl-server
+  [port name]
+  (clojure.core.server/start-server {:port port
+                                     :name name
+                                     :accept 'user/repl-server-accept
+                                     :daemon false}))
+
+(let [repl-port 51363]
+  (run-repl-server repl-port "engine-api-repl")
+  (println "REPL is running on port" repl-port)
+  (Thread/sleep Long/MAX_VALUE))
+EOF

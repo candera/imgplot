@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Recompile Java classes
+javac --module-path ~/bin/javafx-sdk-11.0.2/lib --add-modules javafx.fxml,javafx.controls,javafx.web src/java/imgplot/app/ImgPlotApp.java
